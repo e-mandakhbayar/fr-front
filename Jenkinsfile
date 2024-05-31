@@ -11,11 +11,11 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("FRfront:${BUILD_ID}")
+        app = docker.build("frfront:${BUILD_ID}")
     }
 
     stage('Run') {
 
-        sh 'docker run -it -p 8000:80 --rm --name FRapp FRfront:${BUILD_ID}'
+        sh 'docker run -it -p 8000:80 --rm --name frapp frfront:${BUILD_ID}'
     }
 }
