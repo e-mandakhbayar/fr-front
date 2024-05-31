@@ -22,7 +22,7 @@ node {
     stage('Run') {
 
         app.inside {
-            sh 'docker run -d -p 8000:8000 --name fr-app frfront:${BUILD_ID}'  
+            sh 'docker run -d -p 8000:8000 -v /usr/local/bin/docker:/usr/bin/docker --name fr-app frfront:${BUILD_ID}'  
         }
     }
 }
