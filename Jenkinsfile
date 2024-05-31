@@ -15,12 +15,8 @@ node {
     }
 
     stage('Run') {
-<<<<<<< HEAD
+
         sh 'pwd'
         sh 'docker run -it -p 8000:80 --rm --name FRapp FRfront:${BUILD_ID}'
-=======
-
-        sh 'docker run -it -p 8000:80 --rm --name frapp frfront:${BUILD_ID}'
->>>>>>> 089f9a45f5c364b9f1a69b8b3a0904464b3cf81c
     }
 }
