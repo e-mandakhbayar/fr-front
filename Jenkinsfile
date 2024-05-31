@@ -15,7 +15,7 @@ node {
     }
 
     stage('Run') {
-
-        sh 'docker run -it --entrypoint /bin/sh frfront:${BUILD_ID}'
-    }
+        steps {
+            sh 'docker run -d -p 8000:8000 --name fr-app frfront:${BUILD_ID}'
+        }
 }
