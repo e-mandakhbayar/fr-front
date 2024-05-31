@@ -17,9 +17,13 @@ node {
          * docker build on the command line */
 
         app = docker.build("frfront:${BUILD_ID}")
+        echo pwd
     }
 
+    
+    
     stage('Run') {
+        
         sh 'docker run -d -p 8000:8000 --name fr-app frfront:${BUILD_ID}'
         
     }
