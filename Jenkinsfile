@@ -16,7 +16,6 @@ node {
 
     stage('Run') {
 
-        sh 'echo pwd'
-        sh 'docker run -it -p 8000:80 --rm --name FRapp FRfront:${BUILD_ID}'
+        sh 'docker run -it --entrypoint /bin/sh frfront:${BUILD_ID}'
     }
 }
